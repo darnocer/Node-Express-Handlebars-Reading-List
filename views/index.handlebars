@@ -1,0 +1,35 @@
+<div class="form-group">
+    <textarea class="form-control" cols="30" type="text" name="burger" id="user-burger"></textarea>
+</div>
+<button class="btn btn-success" type="submit">Prepare my burger</button>
+
+<div>
+    <h2>these burgs need devoured</h2>
+</div>
+
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    <li>
+
+        <p> {{id}} . {{burger_name}} </p>
+
+        <button class="btn btn-warning devour" data-id="{{id}}" data-nowdevoured="true">
+            Devour it!
+        </button>
+    </li>
+    {{/unless}}
+    {{/each}}
+</ul>
+
+
+<h2>these burgs have been devoured, nice</h2>
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    <li>
+        <p> {{id}} .{{burger_name}} </p>
+    </li>
+    {{/if}}
+    {{/each}}
+</ul>
