@@ -1,9 +1,9 @@
-USE burgers_db;
+USE books_db;
 
-INSERT INTO burgers
-    (burger_name, devoured)
+INSERT INTO books
+    (book_name, wasRead)
 VALUES
-    ("Double Bacon Cheese Burger", false),
-    ("BBQ & Jalepeno Burger", true),
-    ("Mushroom & Swiss Burger", false),
-    ("Veggie Burger", false);
+    ("Atomic Habits", true),
+    ("Principles", false),
+    ("Deep Work", false),
+    ("Talking to Strangers", false);

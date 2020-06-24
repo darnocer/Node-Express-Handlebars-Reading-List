@@ -1,35 +1,62 @@
-<div class="form-group">
-    <textarea class="form-control" cols="30" type="text" name="burger" id="user-burger"></textarea>
-</div>
-<button class="btn btn-success" type="submit">Prepare my burger</button>
+<h1>Read-Da-Book</h1>
+
+<form action="/" method="POST">
+    <div class="form-group">
+        <textarea type="text" id="user-burger" rows="3" cols="25" name="book"
+            placeholder="Enter a book you want to read"></textarea>
+        <br>
+        <button class="btn btn-success" type="submit">Add to Reading List</button>
+    </div>
+</form>
+
 
 <div>
-    <h2>these burgs need devoured</h2>
+    <h2>My Reading List</h2>
+    <form id="book-read" class="button-size">
+        <select name="id">
+            {{#each books}}
+            {{#unless wasRead}}
+            <option value="{{this.id}}">{{this.book_name}}</option>
+            {{/unless}}
+            {{/each}}
+        </select>
+
+        <button type="submit" class="btn btn-danger" id="read-btn">I read it</button>
+    </form>
+
+
+    <h2>My Read List</h2>
+    <ul>
+        {{#each books}}
+        {{#if wasRead}}
+        <li>
+            <p> {{book_name}} </p>
+        </li>
+        {{/if}}
+        {{/each}}
+    </ul>
 </div>
 
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <li>
-
-        <p> {{id}} . {{burger_name}} </p>
-
-        <button class="btn btn-warning devour" data-id="{{id}}" data-nowdevoured="true">
-            Devour it!
-        </button>
-    </li>
-    {{/unless}}
-    {{/each}}
-</ul>
 
 
-<h2>these burgs have been devoured, nice</h2>
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    <li>
-        <p> {{id}} .{{burger_name}} </p>
-    </li>
-    {{/if}}
-    {{/each}}
-</ul>
+
+{{!-- 
+<script type="text/javascript">
+    $("#devour-btn").on("submit", function (event) {
+        event.preventDefault();
+        console.log("CLICKED");
+        var id = $("[name=id]").val().trim();
+
+
+        $.ajax("/api/burgers/" + id, {
+            type: "PUT",
+            data: devouredBurger
+        }).then(
+            function () {
+                location.reload();
+            }
+        );
+
+
+    });
+</script> --}}

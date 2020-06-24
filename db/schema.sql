@@ -1,15 +1,15 @@
-DROP DATABASE IF EXISTS burgers_db;
-CREATE DATABASE burgers_db;
+DROP DATABASE IF EXISTS books_db;
+CREATE DATABASE books_db;
 
-USE burgers_DB;
+USE books_db;
 
-CREATE TABLE burgers
+CREATE TABLE books
 (
   id INT NOT NULL
   AUTO_INCREMENT,
-  burger_name VARCHAR
+  book_name VARCHAR
   (30) NOT NULL,
-  devoured BOOLEAN,
+  wasRead BOOLEAN DEFAULT false,
   PRIMARY KEY
   (id)
 );
