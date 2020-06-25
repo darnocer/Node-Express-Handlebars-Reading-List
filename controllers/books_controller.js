@@ -4,6 +4,8 @@ const router = express.Router();
 const book = require("../models/book.js");
 
 // ROUTES
+
+// GET route, using select method from ORM to create object to be rendered via handlebars
 router.get("/", function (req, res) {
   book.select(function (data) {
     let booksObj = {
@@ -13,6 +15,7 @@ router.get("/", function (req, res) {
   });
 });
 
+// POST route, taking input from user entered book title, using insert method from ORM.
 router.post("/api/books", function (req, res) {
   book.insert("book_name", [req.body.book_name], function (result) {
     // Send back the ID of the new quote
@@ -20,6 +23,7 @@ router.post("/api/books", function (req, res) {
   });
 });
 
+// PUT route, taking the book id from the user-clicked button to update the "read" status to true or a value of 1
 router.put("/api/books/:id", function (req, res) {
   const condition = "id = " + req.params.id;
 
@@ -39,6 +43,7 @@ router.put("/api/books/:id", function (req, res) {
   );
 });
 
+// DELETE route, grabs book id from user-clicked delete button, used delete method from ORM to remove book from db
 router.delete("/api/books/:id", function (req, res) {
   const condition = "id = " + req.params.id;
 
@@ -52,4 +57,5 @@ router.delete("/api/books/:id", function (req, res) {
   });
 });
 
+// export router
 module.exports = router;
