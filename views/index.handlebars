@@ -8,56 +8,53 @@
     </div>
 </form>
 
+<h2>Reading List</h2>
+<ul>
+    {{#each books}}
+    {{#unless wasRead}}
+    {{> books/book-block wasRead=true}}
+    {{/unless}}
+    {{/each}}
+</ul>
 
-<div>
+<h2>Read List</h2>
+
+<ul>
+    {{#each books}}
+    {{#if wasRead}}
+    {{> books/book-block wasRead=false}}
+    {{/if}}
+    {{/each}}
+</ul>
+
+
+{{!-- <div>
     <h2>My Reading List</h2>
-    <form id="book-read" class="button-size">
+    <form class="book-read" class="button-size">
         <select name="id">
             {{#each books}}
-            {{#unless wasRead}}
-            <option value="{{this.id}}">{{this.book_name}}</option>
-            {{/unless}}
-            {{/each}}
+            {{!#unless wasRead}}
+            <option value="{{this.id}}">{{!this.book_name}}</option>
+            {{!/unless}}
+            {{!/each}}
         </select>
 
-        <button type="submit" class="btn btn-success" id="read-btn" data-id="{{id}}" data-newread="{{wasRead}}">I read
+        <button class="btn btn-success" id="read-btn" data-id="{{id}}" value="1">I read
             it</button>
-        <button class="delete-btn btn btn-danger" id="delete-btn" data-id="{{this.id}}">I don't wanna read it</button>
+        <button class="btn btn-danger" id="delete-btn" data-id="{{id}}">I don't wanna read
+            it</button>
+
     </form>
 
 
     <h2>My Read List</h2>
     <ul>
-        {{#each books}}
-        {{#if wasRead}}
+        {{!#each books}}
+        {{!#if wasRead}}
         <li>
-            <p> {{book_name}} </p>
+            <p> {{!book_name}} </p>
         </li>
-        {{/if}}
-        {{/each}}
+        {{!/if}}
+        {{!/each}}
     </ul>
-</div>
-
-
-
-
-{{!-- 
-<script type="text/javascript">
-    $("#devour-btn").on("submit", function (event) {
-        event.preventDefault();
-        console.log("CLICKED");
-        var id = $("[name=id]").val().trim();
-
-
-        $.ajax("/api/burgers/" + id, {
-            type: "PUT",
-            data: devouredBurger
-        }).then(
-            function () {
-                location.reload();
-            }
-        );
-
-
-    });
-</script> --}}
+</div> --}}

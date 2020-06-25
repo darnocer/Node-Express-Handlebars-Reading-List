@@ -15,22 +15,23 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/books", function (req, res) {
-  console.log("POST");
-
   book.insert("book_name", [req.body.book_name], function (result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
+    console.log("POST");
   });
 });
 
 router.put("/api/books/:id", function (req, res) {
+  console.log("PUT");
+
   const condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
   book.update(
     {
-      wasRead: req.body.read,
+      wasRead: req.body.wasRead,
     },
     condition,
     function (result) {
@@ -45,6 +46,8 @@ router.put("/api/books/:id", function (req, res) {
 });
 
 router.delete("/api/books/:id", function (req, res) {
+  console.log("DELETE");
+
   const condition = "id = " + req.params.id;
 
   book.delete(condition, function (result) {

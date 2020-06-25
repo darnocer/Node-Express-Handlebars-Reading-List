@@ -1,0 +1,9 @@
+<li>
+    {{book_name}}
+
+    <button class="change-read" data-id="{{id}}" data-newread="{{wasRead}}">
+        {{#if wasRead}}I read it{{else}}Read Again{{/if}}
+    </button>
+
+    <button class="delete-btn" data-id="{{this.id}}">DELETE!</button>
+</li>
