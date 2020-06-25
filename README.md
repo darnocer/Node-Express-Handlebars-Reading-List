@@ -2,7 +2,7 @@
 
 ![last commit](https://img.shields.io/github/last-commit/darnocer/Node-Express-Handlebars-Reading-List?style=flat-square) ![license badge](https://img.shields.io/github/license/darnocer/Node-Express-Handlebars-Reading-List?style=flat-square)
 
-### URL: https://darnocer.github.io/Node-Express-Handlebars-Reading-List/
+### URL: https://obscure-scrubland-69219.herokuapp.com/
 
 ## Description
 
