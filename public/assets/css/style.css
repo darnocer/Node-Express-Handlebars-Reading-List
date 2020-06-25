@@ -5,6 +5,7 @@
 h1,
 h2 {
   font-family: "Pangolin", cursive;
+  color: white;
 }
 
 html,
@@ -42,4 +43,12 @@ input[type="text"] {
 
 .list-card {
   min-height: 400px;
+}
+
+.list-group-item {
+  border: none;
+}
+
+.card {
+  background-image: url("../images/chalkboard.jpg");
 }
