@@ -1,49 +1,60 @@
+// DEPENDENCIES
 const express = require("express");
 const router = express.Router();
-
+const book = require("../models/book.js");
 const connection = require("../config/connection.js");
 
-// const book = require("../models/book.js");
-
+// ROUTES
 router.get("/", function (req, res) {
-  connection.query("SELECT * FROM books;", function (err, data) {
-    if (err) throw err;
-    res.render("index", { books: data });
+  book.select(function (data) {
+    let booksObj = {
+      books: data,
+    };
+    res.render("index", booksObj);
   });
 });
 
-router.post("/", function (req, res) {
-  connection.query(
-    "INSERT INTO books (book) VALUES (?)",
-    [req.body.book],
-    function (err, result) {
-      if (err) throw err;
+router.post("/api/books", function (req, res) {
+  console.log("POST");
 
-      res.redirect("/");
-    }
-  );
+  book.insert("book_name", [req.body.book_name], function (result) {
+    // Send back the ID of the new quote
+    res.json({ id: result.insertId });
+  });
 });
 
 router.put("/api/books/:id", function (req, res) {
-  connection.query(
-    "UPDATE books SET wasRead = true WHERE id = ?",
-    [req.params.id],
-    function (err, result) {
-      console.log(req.params.id);
+  const condition = "id = " + req.params.id;
 
-      if (err) {
-        // If an error occurred, send a generic server failure
-        return res.status(500).end();
-      } else if (result.changedRows === 0) {
+  console.log("condition", condition);
+
+  book.update(
+    {
+      wasRead: req.body.read,
+    },
+    condition,
+    function (result) {
+      if (result.changedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();
+      } else {
+        res.status(200).end();
       }
-      res.status(200).end();
     }
   );
 });
-// router.put("/api/burgers/:id", function (req, res) {
-//   console.log("PUT REQUEST");
-// });
+
+router.delete("/api/books/:id", function (req, res) {
+  const condition = "id = " + req.params.id;
+
+  book.delete(condition, function (result) {
+    if (result.affectedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
 
 module.exports = router;

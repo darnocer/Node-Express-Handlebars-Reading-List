@@ -1,11 +1,10 @@
 <h1>Read-Da-Book</h1>
 
-<form action="/" method="POST">
+<form class="new-book">
     <div class="form-group">
-        <textarea type="text" id="user-burger" rows="3" cols="25" name="book"
-            placeholder="Enter a book you want to read"></textarea>
-        <br>
-        <button class="btn btn-success" type="submit">Add to Reading List</button>
+        <input type="text" id="user-book" name="book_name"></input>
+
+        <button class="btn btn-warning" id="add-book" type="submit">Add to Reading List</button>
     </div>
 </form>
 
@@ -21,7 +20,9 @@
             {{/each}}
         </select>
 
-        <button type="submit" class="btn btn-danger" id="read-btn">I read it</button>
+        <button type="submit" class="btn btn-success" id="read-btn" data-id="{{id}}" data-newread="{{wasRead}}">I read
+            it</button>
+        <button class="delete-btn btn btn-danger" id="delete-btn" data-id="{{this.id}}">I don't wanna read it</button>
     </form>
 
 
