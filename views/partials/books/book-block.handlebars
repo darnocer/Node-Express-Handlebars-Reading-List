@@ -1,9 +1,11 @@
-<li>
-    {{book_name}}
+<li class="list-group-item">
+    <span class="h3">{{book_name}}</span>
 
-    <button class="change-read btn btn-warning" data-id="{{id}}" data-newread="{{wasRead}}">
-        {{#if wasRead}}I read it{{else}}Read Again{{/if}}
-    </button>
+    <span class="pull-right"><button class="delete-btn btn btn-danger ml-2" data-id="{{this.id}}">x</button></span>
 
-    <button class="delete-btn btn btn-danger" data-id="{{this.id}}">DELETE!</button>
+    <span class="pull-right"><button class="change-read btn btn-warning" data-id="{{id}}" data-newread="{{wasRead}}">
+            {{#if wasRead}}I read it{{else}}Read Again{{/if}}
+        </button></span>
+
+
 </li>

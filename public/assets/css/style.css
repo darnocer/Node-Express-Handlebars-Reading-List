@@ -1,0 +1,41 @@
+.test {
+  border: 1px solid red;
+}
+
+h1,
+h2 {
+  font-family: "Pangolin", cursive;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #3a96dd;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+input[type="text"] {
+  display: block;
+  margin: 0 auto;
+}
+
+.btn {
+  font-family: "Balsamiq Sans", cursive !important;
+}
+
+.btn-danger {
+  background-color: #f7630c !important;
+  border-color: #f7630c !important;
+}
+
+.btn-warning {
+  background-color: #ffb900 !important;
+  border-color: #ffb900 !important;
+}
+
+.btn-success {
+  background-color: #16c60c !important;
+  border-color: #16c60c !important;
+}

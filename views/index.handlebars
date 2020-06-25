@@ -1,31 +1,57 @@
-<h1>Read-Da-Book</h1>
+<div class="container">
+    <h1 class="title is-1 text-center">Read-Da-Book 📚</h1>
+    <div class="columns">
+        <div class="column">
+            <div class="card">
+                <div class="card-content has-text-centered">
+                    <form class="new-book">
+                        <div class="form-group is-centered">
+                            <input class="form-control form-control-lg" style="width:300px;" type="text" id="user-book"
+                                name="book_name" placeholder="Enter book title"></input>
 
-<form class="new-book">
-    <div class="form-group">
-        <input type="text" id="user-book" name="book_name"></input>
-
-        <button class="btn btn-success" id="add-book" type="submit">Add to Reading List</button>
+                            <button class="btn btn-success mt-3" id="add-book" type="submit">Add to Reading
+                                List</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-</form>
 
-<h2>My Reading List</h2>
-<ul>
-    {{#each books}}
-    {{#unless wasRead}}
-    {{> books/book-block wasRead=true}}
-    {{/unless}}
-    {{/each}}
-</ul>
 
-<h2>My Read List</h2>
+    <div class="columns">
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="title is-2">My Reading List</h2>
+                    <ul class="list-group">
+                        {{#each books}}
+                        {{#unless wasRead}}
+                        {{> books/book-block wasRead=true}}
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-<ul>
-    {{#each books}}
-    {{#if wasRead}}
-    {{> books/book-block wasRead=false}}
-    {{/if}}
-    {{/each}}
-</ul>
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="title is-2">My Read List ✔️</h2>
+
+                    <ul class="list-group">
+                        {{#each books}}
+                        {{#if wasRead}}
+                        {{> books/book-block wasRead=false}}
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 {{!-- <div>
