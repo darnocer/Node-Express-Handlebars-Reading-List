@@ -4,11 +4,11 @@
     <div class="form-group">
         <input type="text" id="user-book" name="book_name"></input>
 
-        <button class="btn btn-warning" id="add-book" type="submit">Add to Reading List</button>
+        <button class="btn btn-success" id="add-book" type="submit">Add to Reading List</button>
     </div>
 </form>
 
-<h2>Reading List</h2>
+<h2>My Reading List</h2>
 <ul>
     {{#each books}}
     {{#unless wasRead}}
@@ -17,7 +17,7 @@
     {{/each}}
 </ul>
 
-<h2>Read List</h2>
+<h2>My Read List</h2>
 
 <ul>
     {{#each books}}
