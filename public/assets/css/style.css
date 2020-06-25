@@ -39,3 +39,7 @@ input[type="text"] {
   background-color: #16c60c !important;
   border-color: #16c60c !important;
 }
+
+.list-card {
+  min-height: 400px;
+}
