@@ -39,6 +39,8 @@ navigate to localhost:8080
 
 - add scrolling to list containers to keep the size consistent
 - pull and display book authors automatically from the title via API
+- mobile responsiveness
+- validation for input field
 
 ## Credits
 
