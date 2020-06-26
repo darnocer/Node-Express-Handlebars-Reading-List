@@ -1,5 +1,5 @@
 {
-  "name": "Node-Express-Handlebars-Eat-Da-Burger",
+  "name": "Node-Express-Handlebars-Reading-List",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,18 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/darnocer/Node-Express-Handlebars-Eat-Da-Burger.git"
+    "url": "git+https://github.com/darnocer/Node-Express-Handlebars-Reading-List.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/darnocer/Node-Express-Handlebars-Eat-Da-Burger/issues"
+    "url": "https://github.com/darnocer/Node-Express-Handlebars-Reading-List/issues"
   },
-  "homepage": "https://github.com/darnocer/Node-Express-Handlebars-Eat-Da-Burger#readme",
+  "homepage": "https://github.com/darnocer/Node-Express-Handlebars-Reading-List#readme",
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
+    "heroku": "^7.42.1",
     "mysql": "^2.18.1"
   }
 }
