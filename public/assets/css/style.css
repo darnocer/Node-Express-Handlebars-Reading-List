@@ -42,7 +42,7 @@ input[type="text"] {
 }
 
 .list-card {
-  min-height: 400px;
+  height: 400px;
 }
 
 .list-group-item {
@@ -56,4 +56,9 @@ input[type="text"] {
 .borderimg {
   border: 15px solid transparent;
   border-image: url(../images/border.jpeg) 20 20 round;
+}
+
+.scroll {
+  overflow-y: auto;
+  height: 400px;
 }
