@@ -8,7 +8,7 @@ CREATE TABLE books
   id INT NOT NULL
   AUTO_INCREMENT,
   book_name VARCHAR
-  (30) NOT NULL,
+  (100) NOT NULL,
   wasRead BOOLEAN DEFAULT false,
   PRIMARY KEY
   (id)

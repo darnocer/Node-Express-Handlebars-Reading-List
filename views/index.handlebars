@@ -9,6 +9,7 @@
                         <div class="form-group is-centered">
                             <input class="form-control form-control-lg" style="width:300px;" type="text" id="user-book"
                                 name="book_name" placeholder="Enter book title"></input>
+                            <p class="d-none">HEY</p>
 
                             <button class="btn btn-success mt-3" id="add-book" type="submit">Add to Reading
                                 List</button>
@@ -53,35 +54,3 @@
         </div>
     </div>
 </div>
-
-
-{{!-- <div>
-    <h2>My Reading List</h2>
-    <form class="book-read" class="button-size">
-        <select name="id">
-            {{#each books}}
-            {{!#unless wasRead}}
-            <option value="{{this.id}}">{{!this.book_name}}</option>
-            {{!/unless}}
-            {{!/each}}
-        </select>
-
-        <button class="btn btn-success" id="read-btn" data-id="{{id}}" value="1">I read
-            it</button>
-        <button class="btn btn-danger" id="delete-btn" data-id="{{id}}">I don't wanna read
-            it</button>
-
-    </form>
-
-
-    <h2>My Read List</h2>
-    <ul>
-        {{!#each books}}
-        {{!#if wasRead}}
-        <li>
-            <p> {{!book_name}} </p>
-        </li>
-        {{!/if}}
-        {{!/each}}
-    </ul>
-</div> --}}
